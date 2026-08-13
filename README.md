@@ -1,53 +1,71 @@
-# AI Website Health Agent
+# 🔍 AI Website Health Agent
 
-An AI-powered website health checking agent using Python and Ollama.
+An AI-powered website health monitoring application that analyzes a website and detects broken webpages, links, images, CSS files, and JavaScript resources.
 
-## Features
+The system uses a Python-based website crawler and checker for deterministic scanning and **Ollama with Llama 3.2** for intelligent analysis and report generation.
 
-- Website crawling
-- Broken link detection
-- Broken image detection
-- CSS/JS resource checking
-- Page status checking
-- Browser testing with Playwright
-- JavaScript error detection
-- Network error detection
-- AI analysis using local Ollama
-- Website health reports
+---
 
-## AI
+## 🚀 Features
 
-This project uses Ollama as the local LLM.
+- 🌐 Website URL scanning
+- 🕷️ Multi-page website crawling
+- 🔗 Broken link detection
+- 🖼️ Broken image detection
+- 🎨 Broken CSS detection
+- ⚙️ Broken JavaScript detection
+- 📄 Failed webpage detection
+- 📊 Website health score
+- 🚨 Severity classification
+- 🤖 Local AI analysis using Ollama
+- 📋 Automated AI health report
+- 📦 Raw JSON scan report
+- 🖥️ Streamlit web interface
+- ⬇️ Downloadable reports
 
-No OpenAI API or Gemini API is required.
+---
 
-## Project Structure
+## 🏗️ Architecture
 
-app/
-+-- crawler/
-+-- checker/
-+-- browser/
-+-- ai/
-+-- report/
-
-## Run
-
-Create a virtual environment:
-
-python -m venv .venv
-
-Activate:
-
-.venv\Scripts\activate
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-Install Playwright browser:
-
-playwright install
-
-Run:
-
-python main.py
+```text
+                    USER
+                     │
+                     ▼
+            STREAMLIT WEB APP
+                     │
+                     ▼
+                WEBSITE URL
+                     │
+                     ▼
+             WEBSITE CRAWLER
+                     │
+                     ▼
+               PAGE PARSER
+                     │
+                     ▼
+             RESOURCE CHECKER
+             ┌───────┼────────┐
+             ▼       ▼        ▼
+           Links   Images   CSS / JS
+             │       │        │
+             └───────┼────────┘
+                     ▼
+               RAW SCAN JSON
+                     │
+                     ▼
+             RESULT SUMMARIZER
+                     │
+                     ▼
+              SEVERITY ENGINE
+                     │
+                     ▼
+                HEALTH SCORE
+                     │
+                     ▼
+             OLLAMA LLAMA 3.2
+                     │
+                     ▼
+             AI HEALTH REPORT
+                     │
+                     ▼
+             STREAMLIT DASHBOARD
